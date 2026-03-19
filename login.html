@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Lumina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-white min-h-screen flex items-center justify-center">
+    <div class="max-w-md w-full px-6">
+        <div class="bg-zinc-900 rounded-3xl p-12">
+            <a href="index.html" class="text-yellow-400 mb-8 block text-center">&larr; Back to site</a>
+            <h2 class="text-4xl font-semibold text-center mb-8">Welcome back</h2>
+            <input id="email" type="email" placeholder="Email" class="w-full bg-zinc-800 border border-zinc-700 rounded-3xl px-8 py-6 mb-4">
+            <input id="password" type="password" placeholder="Password" class="w-full bg-zinc-800 border border-zinc-700 rounded-3xl px-8 py-6 mb-8">
+            <button onclick="login()" class="w-full py-6 bg-yellow-400 hover:bg-yellow-300 text-zinc-950 font-bold rounded-3xl">LOGIN</button>
+            <p class="text-center mt-6 text-sm">New? <a href="register.html" class="text-yellow-400">Create account</a></p>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const email = document.getElementById('email').value || "demo@client.co.za";
+            localStorage.setItem('luminaLoggedIn', 'true');
+            localStorage.setItem('luminaUser', JSON.stringify({name: "Alex", email: email}));
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+</html>
