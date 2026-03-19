@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA • Elite Website Creation in South Africa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --accent: 234 179 8;
+        }
+        
+        .tail-container {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        .logo-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(234 179 8 / 0.25);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: rgb(234 179 8);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .pricing-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pricing-card.popular {
+            transform: scale(1.05);
+            z-index: 10;
+            box-shadow: 0 0 0 4px rgb(234 179 8 / 0.3);
+        }
+    </style>
+</head>
+<body class="tail-container bg-zinc-950 text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-yellow-400 rounded-2xl flex items-center justify-center">
+                    <span class="text-zinc-950 font-bold text-3xl leading-none logo-font">L</span>
+                </div>
+                <div>
+                    <span class="logo-font text-3xl font-semibold tracking-tighter">LUMINA</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#stats" class="nav-link">Stats</a>
+                <a href="#perks" class="nav-link">Why Us</a>
+                <a href="#plans" class="nav-link">Plans</a>
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <a href="#contact" 
+               class="px-8 py-3.5 bg-yellow-400 hover:bg-yellow-300 transition-colors text-zinc-950 font-semibold rounded-3xl text-sm flex items-center gap-x-2">
+                <i class="fa-solid fa-arrow-right"></i>
+                START PROJECT
+            </a>
+            
+            <button id="mobile-menu-btn"
+                    class="md:hidden text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-zinc-900 border border-yellow-400/30 px-5 py-2 rounded-3xl text-sm">
+                    <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                    Johannesburg-based • Trusted by 300+ SA businesses
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-semibold leading-none tracking-tighter logo-font">
+                    WEBSITES THAT<br>ACTUALLY<br><span class="text-yellow-400">CONVERT</span>
+                </h1>
+                
+                <p class="text-xl text-zinc-400 max-w-md">
+                    Lightning-fast, DDoS-protected, SEO-optimised websites built for South African businesses that want to dominate online.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#plans" 
+                       class="px-10 py-5 bg-yellow-400 text-zinc-950 font-semibold text-lg rounded-3xl flex items-center gap-x-3 hover:scale-105 transition-all">
+                        SEE OUR PLANS
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="#contact" 
+                       class="px-10 py-5 border border-white/30 hover:border-yellow-400 font-medium text-lg rounded-3xl transition-all">
+                        BOOK FREE CONSULTATION
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-x-8 text-sm pt-6">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-shield-halved text-yellow-400"></i>
+                        <span class="text-zinc-400">DDoS Protected</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-bolt text-yellow-400"></i>
+                        <span class="text-zinc-400">Under 2s load time</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero visual -->
+            <div class="relative hidden md:block">
+                <div class="bg-zinc-900/70 backdrop-blur-xl border border-zinc-700 rounded-3xl p-2 shadow-2xl">
+                    <img src="https://picsum.photos/id/1015/800/620" 
+                         class="rounded-3xl shadow-inner" alt="Website preview">
+                </div>
+                <!-- floating badges -->
+                <div class="absolute -top-6 -left-6 bg-zinc-900 border border-yellow-400/50 rounded-2xl px-6 py-4 shadow-xl">
+                    <div class="flex items-center gap-x-3">
+                        <div class="text-4xl">🚀</div>
+                        <div>
+                            <div class="text-sm font-medium">Live in 48h</div>
+                            <div class="text-xs text-zinc-400">Starter sites</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-8 right-8 bg-zinc-900 border border-yellow-400/50 rounded-2xl px-5 py-3 shadow-xl flex items-center gap-x-3">
+                    <i class="fa-solid fa-check-circle text-green-400 text-2xl"></i>
+                    <div class="text-sm">Protected against<br><span class="font-semibold">1.2M+ attacks</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-y-2 text-xs tracking-widest">
+            <span class="animate-bounce">SCROLL</span>
+            <i class="fa-solid fa-chevron-down text-yellow-400"></i>
+        </div>
+    </header>
+
+    <!-- STATS -->
+    <section id="stats" class="py-24 bg-black border-t border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- stat 1 -->
+                <div class="text-center">
+                    <div id="stat-sites" class="stat-number text-7xl font-semibold text-yellow-400 mb-1">347</div>
+                    <div class="text-zinc-400 text-lg">Websites launched</div>
+                    <div class="h-px w-12 mx-auto bg-yellow-400/30 mt-6"></div>
+                </div>
+                <!-- stat 2 -->
+                <div class="text-center">
+                    <div id="stat-uptime" class="stat-number text-7xl font-semibold text-yellow-400 mb-1">99.99</div>
+                    <div class="text-zinc-400 text-lg">% Uptime</div>
+                    <div class="h-px w-12 mx-auto bg-yellow-400/30 mt-6"></div>
+                </div>
+                <!-- stat 3 -->
+                <div class="text-center">
+                    <div id="stat-ddos" class="stat-number text-7xl font-semibold text-yellow-400 mb-1">1.8M</div>
+                    <div class="text-zinc-400 text-lg">DDoS attacks blocked</div>
+                    <div class="h-px w-12 mx-auto bg-yellow-400/30 mt-6"></div>
+                </div>
+                <!-- stat 4 -->
+                <div class="text-center">
+                    <div id="stat-rating" class="stat-number text-7xl font-semibold text-yellow-400 mb-1">4.98</div>
+                    <div class="text-zinc-400 text-lg">Average rating</div>
+                    <div class="h-px w-12 mx-auto bg-yellow-400/30 mt-6"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERKS / WHY CHOOSE US -->
+    <section id="perks" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-yellow-400 text-sm tracking-[3px] font-medium">WHY SOUTH AFRICAN BUSINESSES CHOOSE LUMINA</span>
+                <h2 class="text-5xl font-semibold mt-3 tracking-tighter">Built for speed.<br>Protected for life.</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- perk cards -->
+                <div class="bg-zinc-900 rounded-3xl p-10 card-hover">
+                    <div class="w-14 h-14 bg-yellow-400/10 text-yellow-400 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-bolt-lightning text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Lightning Load Times</h3>
+                    <p class="text-zinc-400">Average 1.4s load speed. Google loves us. Your customers stay.</p>
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-yellow-400"></i> Core Web Vitals optimised</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-yellow-400"></i> Image compression built-in</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-zinc-900 rounded-3xl p-10 card-hover">
+                    <div class="w-14 h-14 bg-yellow-400/10 text-yellow-400 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-shield-halved text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Military-Grade Security</h3>
+                    <p class="text-zinc-400">Every site ships with Cloudflare DDoS protection, SSL, and daily backups.</p>
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-yellow-400"></i> 1.8 million attacks blocked last year</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-yellow-400"></i> Automatic malware scanning</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-zinc-900 rounded-3xl p-10 card-hover">
+                    <div class="w-14 h-14 bg-yellow-400/10 text-yellow-400 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-mobile-screen text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">100% Mobile-First</h3>
+                    <p class="text-zinc-400">Built for South African networks. Works perfectly on MTN, Vodacom &amp; Cell C.</p>
+                    <ul class="mt-8 space-y-4 text-sm">
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-yellow-400"></i> Responsive on every device</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-yellow-400"></i> Offline-first PWA ready</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING PLANS -->
+    <section id="plans" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-6 py-2 bg-yellow-400/10 text-yellow-400 text-xs rounded-full font-medium">CHOOSE YOUR GROWTH PATH</span>
+                <h2 class="text-5xl font-semibold mt-4 tracking-tighter">Transparent pricing.<br>No hidden fees.</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter -->
+                <div class="pricing-card bg-zinc-900 rounded-3xl p-8">
+                    <div class="text-sm font-medium text-zinc-400 mb-2">STARTER</div>
+                    <div class="flex items-baseline">
+                        <span class="text-6xl font-semibold">R4&nbsp;999</span>
+                        <span class="text-zinc-400 ml-2">once-off</span>
+                    </div>
+                    <div class="text-xs text-zinc-500 mt-1">+ R299/month hosting (optional)</div>
+                    
+                    <ul class="my-10 space-y-5 text-sm">
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> 5-page modern website</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Mobile responsive</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Contact form + WhatsApp</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Basic SEO setup</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> DDoS protection</li>
+                        <li class="flex items-center gap-x-3 text-zinc-500"><i class="fa-solid fa-xmark"></i> Custom illustrations</li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full text-center py-5 border border-white/30 hover:border-yellow-400 rounded-3xl font-medium transition-all">
+                        GET STARTED
+                    </a>
+                </div>
+                
+                <!-- Professional (POPULAR) -->
+                <div class="pricing-card popular bg-zinc-900 border-2 border-yellow-400 rounded-3xl p-8 relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-zinc-950 text-xs font-bold px-6 py-1 rounded-3xl">MOST POPULAR</div>
+                    
+                    <div class="text-sm font-medium text-yellow-400 mb-2">PROFESSIONAL</div>
+                    <div class="flex items-baseline">
+                        <span class="text-6xl font-semibold">R9&nbsp;999</span>
+                        <span class="text-zinc-400 ml-2">once-off</span>
+                    </div>
+                    <div class="text-xs text-zinc-500 mt-1">+ R399/month hosting</div>
+                    
+                    <ul class="my-10 space-y-5 text-sm">
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Unlimited pages</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Custom animations</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Blog / News section</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Advanced SEO + Google Business</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Full Cloudflare security suite</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> 3 months free support</li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full text-center py-5 bg-yellow-400 hover:bg-yellow-300 text-zinc-950 font-semibold rounded-3xl transition-all">
+                        START PROFESSIONAL PROJECT
+                    </a>
+                </div>
+                
+                <!-- Enterprise -->
+                <div class="pricing-card bg-zinc-900 rounded-3xl p-8">
+                    <div class="text-sm font-medium text-zinc-400 mb-2">ENTERPRISE</div>
+                    <div class="flex items-baseline">
+                        <span class="text-6xl font-semibold">R19&nbsp;999</span>
+                        <span class="text-zinc-400 ml-2">once-off</span>
+                    </div>
+                    <div class="text-xs text-zinc-500 mt-1">+ R599/month hosting</div>
+                    
+                    <ul class="my-10 space-y-5 text-sm">
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> E-commerce ready</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Custom dashboard</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Multi-language (Afrikaans/English)</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Full marketing integration</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> Priority 24/7 support</li>
+                        <li class="flex items-center gap-x-3"><i class="fa-solid fa-check text-emerald-400"></i> 12 months free maintenance</li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full text-center py-5 border border-white/30 hover:border-yellow-400 rounded-3xl font-medium transition-all">
+                        GO ENTERPRISE
+                    </a>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-zinc-500 mt-12">All plans include free domain for first year, SSL certificate, and hosting on South African servers for ultra-low latency.</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS / WORK -->
+    <section id="work" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-center mb-12">Real results from real South African businesses</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-zinc-900 rounded-3xl p-8">
+                    <div class="flex gap-x-3 mb-6">
+                        <img src="https://picsum.photos/id/64/48/48" class="w-12 h-12 rounded-2xl" alt="">
+                        <div>
+                            <div class="font-semibold">KwaZulu-Natal Butchery</div>
+                            <div class="text-xs text-yellow-400">+340% online orders in 3 months</div>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 italic">"Lumina turned our old static site into a beast. We’re now getting bookings directly from the website every day. Best investment we’ve made."</p>
+                    <div class="mt-8 text-xs text-zinc-500">— Thabo Mthethwa, Owner</div>
+                </div>
+                
+                <div class="bg-zinc-900 rounded-3xl p-8">
+                    <div class="flex gap-x-3 mb-6">
+                        <img src="https://picsum.photos/id/201/48/48" class="w-12 h-12 rounded-2xl" alt="">
+                        <div>
+                            <div class="font-semibold">Cape Town Coffee Roasters</div>
+                            <div class="text-xs text-yellow-400">DDoS protection saved us during Black Friday</div>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 italic">"Our site stayed online when every competitor crashed. The design is clean and the checkout is lightning fast."</p>
+                    <div class="mt-8 text-xs text-zinc-500">— Priya Naidoo, Founder</div>
+                </div>
+                
+                <div class="bg-zinc-900 rounded-3xl p-8">
+                    <div class="flex gap-x-3 mb-6">
+                        <img src="https://picsum.photos/id/29/48/48" class="w-12 h-12 rounded-2xl" alt="">
+                        <div>
+                            <div class="font-semibold">Joburg Auto Spares</div>
+                            <div class="text-xs text-yellow-400">Ranked #1 on Google in 28 days</div>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 italic">"SEO was included and we went from page 4 to page 1 instantly. Sales doubled."</p>
+                    <div class="mt-8 text-xs text-zinc-500">— Sipho Nkosi, Director</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="contact" class="py-32 bg-gradient-to-b from-transparent via-yellow-400/5 to-transparent">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-semibold tracking-tighter mb-6">Ready to get your website live this week?</h2>
+            <p class="text-xl text-zinc-400 mb-10">Tell us about your business. We’ll reply with a free 15-minute strategy call and custom proposal within 24 hours.</p>
+            
+            <form id="contact-form" class="space-y-6 max-w-md mx-auto">
+                <input type="text" id="name" placeholder="Your name" 
+                       class="w-full bg-zinc-900 border border-zinc-700 focus:border-yellow-400 rounded-3xl px-8 py-6 text-lg outline-none">
+                <input type="email" id="email" placeholder="Business email" 
+                       class="w-full bg-zinc-900 border border-zinc-700 focus:border-yellow-400 rounded-3xl px-8 py-6 text-lg outline-none">
+                <input type="tel" id="phone" placeholder="Phone (WhatsApp)" 
+                       class="w-full bg-zinc-900 border border-zinc-700 focus:border-yellow-400 rounded-3xl px-8 py-6 text-lg outline-none">
+                <textarea id="message" rows="4" placeholder="Tell us about your project..." 
+                          class="w-full bg-zinc-900 border border-zinc-700 focus:border-yellow-400 rounded-3xl px-8 py-6 text-lg outline-none resize-none"></textarea>
+                
+                <button type="submit"
+                        class="w-full py-7 bg-yellow-400 hover:bg-yellow-300 transition-all text-zinc-950 font-bold text-xl rounded-3xl flex items-center justify-center gap-x-3">
+                    SEND MESSAGE 
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+            
+            <p class="text-xs text-zinc-500 mt-8">Or WhatsApp us directly: <a href="https://wa.me/27821234567" class="underline">+27 82 123 4567</a></p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black pt-20 pb-12 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-5 gap-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-x-3 mb-6">
+                        <div class="w-9 h-9 bg-yellow-400 rounded-2xl flex items-center justify-center">
+                            <span class="text-zinc-950 font-bold text-3xl leading-none logo-font">L</span>
+                        </div>
+                        <span class="logo-font text-3xl font-semibold tracking-tighter">LUMINA</span>
+                    </div>
+                    <p class="text-zinc-400 max-w-xs">
+                        Premium websites for South African businesses. Built fast. Protected forever.
+                    </p>
+                    <div class="mt-8 flex gap-x-6 text-2xl">
+                        <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="uppercase text-xs tracking-widest text-zinc-500 mb-6">Quick links</div>
+                    <div class="space-y-3 text-sm">
+                        <a href="#plans" class="block hover:text-yellow-400">Plans</a>
+                        <a href="#perks" class="block hover:text-yellow-400">Why Lumina</a>
+                        <a href="#work" class="block hover:text-yellow-400">Our Work</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="uppercase text-xs tracking-widest text-zinc-500 mb-6">Company</div>
+                    <div class="space-y-3 text-sm">
+                        <a href="#" class="block hover:text-yellow-400">About Us</a>
+                        <a href="#" class="block hover:text-yellow-400">Blog</a>
+                        <a href="#" class="block hover:text-yellow-400">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="uppercase text-xs tracking-widest text-zinc-500 mb-6">Legal</div>
+                    <div class="space-y-3 text-sm">
+                        <a href="#" class="block hover:text-yellow-400">Privacy</a>
+                        <a href="#" class="block hover:text-yellow-400">Terms</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center text-xs text-zinc-500 mt-20">
+                © 2026 Lumina Web Studios • Johannesburg, South Africa<br>
+                Built by the same team that built this site 😉
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded
+        function initializeTailwind() {
+            // Nothing extra needed
+        }
+        
+        // Counter animation
+        function animateCounter(id, target, suffix = '', duration = 1800) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const el = document.getElementById(id);
+            
+            function step() {
+                start += increment;
+                if (start >= target) {
+                    el.textContent = Math.floor(target) + suffix;
+                } else {
+                    el.textContent = Math.floor(start) + suffix;
+                    requestAnimationFrame(step);
+                }
+            }
+            step();
+        }
+        
+        // Trigger counters when scrolled into view
+        function runCounters() {
+            const statsSection = document.getElementById('stats');
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    animateCounter('stat-sites', 347);
+                    animateCounter('stat-uptime', 99.99, '%');
+                    animateCounter('stat-ddos', 1800000, '+');
+                    animateCounter('stat-rating', 4.98);
+                    observer.disconnect();
+                }
+            }, { threshold: 0.6 });
+            
+            observer.observe(statsSection);
+        }
+        
+        // Contact form
+        function setupForm() {
+            const form = document.getElementById('contact-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const btn = form.querySelector('button');
+                const originalText = btn.innerHTML;
+                
+                btn.innerHTML = `
+                    <span class="inline-block animate-spin mr-3">⟳</span>
+                    SENDING...
+                `;
+                btn.disabled = true;
+                
+                // Fake send
+                setTimeout(() => {
+                    btn.innerHTML = `
+                        <i class="fa-solid fa-check mr-3"></i>
+                        MESSAGE SENT!
+                    `;
+                    btn.style.backgroundColor = '#10b981';
+                    
+                    setTimeout(() => {
+                        alert("Thank you! We'll reply within 24 hours.\n\n(Real form would send email here)");
+                        form.reset();
+                        btn.innerHTML = originalText;
+                        btn.style.backgroundColor = '';
+                        btn.disabled = false;
+                    }, 1800);
+                }, 1250);
+            });
+        }
+        
+        // Mobile menu (simple alert for demo)
+        function setupMobileMenu() {
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+                alert("Mobile menu would open here.\n\nLinks: Stats • Why Us • Plans • Work • Contact");
+            });
+        }
+        
+        // Init everything
+        window.onload = function() {
+            initializeTailwind();
+            runCounters();
+            setupForm();
+            setupMobileMenu();
+            
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        };
+    </script>
+</body>
+</html>
